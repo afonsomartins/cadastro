@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cadastro de usuario</title>
+</head>
+<body>
+<p style="text-align: center ;font-size: 25px">pagina de cadastro</p>
+<form method="POST" >
+{%csrf_token%}
+{{formulario.as_p}}
+<button type="submit">confirmar</button>
+</form>
+</body>
+</html>

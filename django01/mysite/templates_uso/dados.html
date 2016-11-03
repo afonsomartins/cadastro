@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>informaçoes do usuario</title>
+</head>
+<body>
+<a href="{% url 'logout'%}">logout</a>
+<form method="POST" action="{% url 'dados' %}">{%csrf_token%}
+	{{form}}
+	<button type="submit">enviar</button>
+	    <div class="content-panel">
+                      <h4><center>usuarios</center></h4>
+                          <section id="unseen">
+                            <table class="table table-bordered table-striped table-condensed">
+                              <thead>
+                              <tr>
+                                  <th>Nome</th>
+                                  <th>data_nascimento</th>
+                                  
+                                  <th>profissão</th>
+                                  <th>telefone</th>
+                                  <th>cpf</th>
+                               
+                              </tr>
+                              </thead>
+                              <tbody>
+                                {% for registro in lista_de_pessoas %}
+                              <tr>
+                                <ol>
+
+                                  <td>{{registro.nome}}<span style="padding-left:35px"></td>
+                                  <td>{{registro.data_nascimento}}<span style="padding-left:35px"></td>
+                                  <td>{{registro.profissão}}<span style="padding-left:35px"></td>
+                                  <td>{{registro.telefone}}<span style="padding-left:35px"></td>
+                                  <td>{{registro.cpf}}<span style="padding-left:35px"></td>
+                         
+
+                                </ol>
+                              </tr>
+                              {% empty %}
+                              <tr><h1>nenhum registro</h1></tr>
+                                {% endfor %}
+                              
+
+                         
+                            
+                              </tbody>
+                          </table>
+                          </section>
+                  
+	
+</body>
+</html>

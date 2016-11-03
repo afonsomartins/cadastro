@@ -1,0 +1,23 @@
+
+{% block content %}
+<form method="POST" action="{% url 'login' %}" class="form-signin">
+  {%csrf_token%}
+  <h2 class="form-signin-heading">Login</h2>
+  <div class="form-group">
+    <div class="col-md-12">
+      <input type="text" name="username" class="form-control" placeholder="Login">
+    </div>
+  </div>
+
+  <div class="form-group">
+  <div class="col-md-12">
+      <input type="password" name="password" class="form-control" placeholder="Senha">
+    </div>
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  </form>  
+  <p><a href=""> Recuperar Senha</p>
+  <p><a href="{% url 'cadastro'%}">Fazer Cadastro</a></p>
+ 
+{% endblock %}
