@@ -64,5 +64,6 @@ def cadastro(request):
                user.save()
 
 
-        return render(request, "cadastro.html", {"formulario": cadastroForm() })
+
+        return render(request, "cadastro_feito.html", {"formulario": cadastroForm() })
 	
